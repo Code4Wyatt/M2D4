@@ -39,33 +39,38 @@
         <div class="row">
           <div class="column">
             <h4>Name</h4>
-            <input class="name">
+            <form onsubmit="return addItem('list', this.inputItem)"> 
+              <input type="text" id="inputItem" placeholder="Enter a Task">
+              <input type="submit">
+            
+            </form>
+          
+          </form>
           </div>
         </div>
         <div class="row">
           <div class="column">
             <h4>Number of Teams</h4>
             <input type="number">
-          </div>
+            <input type="submit">     
         </div>
       </div>
+</div>
+
 
       <div class="container">
         <div class="row">
           <div class="column">
             <h4>Waiting List</h4>
             <div class="waitingList">
-              
+              <ul id="list">
+                <li></li>
+              </ul>
+
             </div>
           </div>
         </div>
       </div>
-
-
-
-
-
-
 
     <script
       src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
@@ -77,5 +82,6 @@
       integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns"
       crossorigin="anonymous"
     ></script>
+    <script src="d4.js"></script>
   </body>
 </html>
