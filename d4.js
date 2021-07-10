@@ -64,8 +64,11 @@ function removeTeam() {
     const teamsList = document.querySelectorAll(".team") // targeting the teams list section
     const lastTeam = teamsList[teamsList.length - 1] // declaring lastTeam variable to remove 1 from the total amount of teams
 
-    for (let child of lastTeam.querySelector("ul").children) {  // need to further study for loops to fully understand the inital part of this code
-        teamsQueue.appendChild(child)
+    const list = lastTeam.querySelector("ul")  // targetting each unordered list in teamslist section
+
+    while ( list.children.length !== 0 ) {  // while the length/value of each child/element in the teams lists are more than 0
+        teamQueue.appendChild(list.children[0]) // target the last element in the list, last ul in teams list 
     }
-    lastTeam.remove()
-}
+    lastTeam.remove() // and remove it
+
+    }
