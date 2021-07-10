@@ -25,7 +25,7 @@ window.onload = function () {      // window onload to call function when window
 function createTeams() {
     for (let i = 0; i < teamsN.innerHTML; i++) {    // used for loop to declare index of 0
                                                         // below used .innerHTML to insert below html element to teamsRow section
-        teamsRow.innerHTML += `<div class="col-3">    
+        teamsRow.innerHTML += `<div class="col-3 team">    
         <h4>Team ${i + 1}</h4>
         <ul class="list-group">
 
@@ -33,4 +33,13 @@ function createTeams() {
     </div>`
         
     }
+}
+
+function assign() {
+    const person = teamQueue.children[0] // targeting first element in the teams queue/waiting list
+    const teams = document.querySelectorAll(".team") // targetin the teams sections
+
+    const randomIndex = Math.floor(Math.random() * teams.length) // creating a random index to randomly select a team
+
+    teams[randomIndex].appendChild(person) // taking the teams section, applying the random index to it and using append child to add the 1st element/person
 }
