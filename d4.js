@@ -59,3 +59,13 @@ function addTeam() {
     </ul>
 </div>`
 }
+
+function removeTeam() {
+    const teamsList = document.querySelectorAll(".team") // targeting the teams list section
+    const lastTeam = teamsList[teamsList.length - 1] // declaring lastTeam variable to remove 1 from the total amount of teams
+
+    for (let child of lastTeam.querySelector("ul").children) {  // need to further study for loops to fully understand the inital part of this code
+        teamsQueue.appendChild(child)
+    }
+    lastTeam.remove()
+}
