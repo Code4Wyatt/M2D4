@@ -37,9 +37,25 @@ function createTeams() {
 
 function assign() {
     const person = teamQueue.children[0] // targeting first element in the teams queue/waiting list
+    
+    if (!person) return
     const teams = document.querySelectorAll(".team") // targetin the teams sections
 
     const randomIndex = Math.floor(Math.random() * teams.length) // creating a random index to randomly select a team
 
     teams[randomIndex].appendChild(person) // taking the teams section, applying the random index to it and using append child to add the 1st element/person
+}
+
+function addTeam() {
+
+    const teamNumber = parseInt(teamsN.innerHTML) + 1 // takes the team number, turns it from a string to an integer so we can then add 1 when button pressed
+    teamsN.innerHTML = teamNumber  // assigning the new +1 value to the teams number section
+                                    // below adding html element to the teams row section
+    
+    teamsRow.innerHTML += `<div class="col-3 team"> 
+    <h4>Team ${teamNumber}</h4>
+    <ul class="list-group">
+
+    </ul>
+</div>`
 }
